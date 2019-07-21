@@ -6,10 +6,22 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Jul 2019 19:04:23 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jul 2019 19:04:37 +0800</lastBuildDate>
     
 	<atom:link href="https:///derbo.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>流程控制语句(循环结构) for&amp;while&amp;do..while</title>
+      <link>https:///derbo.github.io/post/studyday03/</link>
+      <pubDate>Sun, 21 Jul 2019 19:04:37 +0800</pubDate>
+      
+      <guid>https:///derbo.github.io/post/studyday03/</guid>
+      <description>对我以学知识的整理
+我的GitHub:https://github.com/DerBo 前言： 不论哪一种编程语言，都会提供两种基本的流程控制结构： 分支结构和循环结构。
+其中分支结构用于实现根据条件来选择性地控制某段代码，循环结构则用与实现根据循环条件重复执行某段代码。  三 、循环结构
+循环语句可以在满足循环条件的情况下，反复执行某一段代码，这段被重复执行的代码被称为循环体语句，当反复执行这个循环体时，需要通过修改循环变量使得 循环判断条件为false，从而结束循环，否则循环将一直执行下去，形成死循环。 一)for循环: for循环语句格式： for(初始化语句①; 循环条件语句②; 迭代语句④){ 循环体语句③ } for(;;){ 循环体语句块；//如果循环体中没有跳出循环体的语句，那么就是死循环 } 注意： （1）for(;;)中的两个；是不能多也不能少 （2）循环条件必须是boolean类型 （3）如果循环条件语句②省略的话，就默认为循环条件成立 执行流程： 第一步：执行初始化语句①，完成循环变量的初始化； 第二步：执行循环条件语句②，看循环条件语句的值是true，还是false； 如果是true，执行第三步； 如果是false，循环语句中止，循环不再执行。 第三步：执行循环体语句③ 第四步：执行迭代语句④，针对循环变量重新赋值 第五步：根据循环变量的新值，重新从第二步开始再执行一遍 public class ForDemo01 { public static void main(String[] args) { //控制台输出10次HelloWorld，不使用循环 System.out.println(&amp;quot;HelloWorld&amp;quot;); System.out.println(&amp;quot;HelloWorld&amp;quot;); System.out.println(&amp;quot;HelloWorld&amp;quot;); System.out.println(&amp;quot;HelloWorld&amp;quot;); System.out.println(&amp;quot;HelloWorld&amp;quot;); System.out.println(&amp;quot;HelloWorld&amp;quot;); System.out.println(&amp;quot;HelloWorld&amp;quot;); System.out.println(&amp;quot;HelloWorld&amp;quot;); System.out.println(&amp;quot;HelloWorld&amp;quot;); System.out.println(&amp;quot;HelloWorld&amp;quot;); System.out.println(&amp;quot;-------------------------&amp;quot;); //用循环改进，循环10次 //定义变量从10开始，循环条件为&amp;lt;=10 for(int x = 1; x &amp;lt;= 10; x++) { System.out.println(&amp;quot;HelloWorld&amp;quot;+x); } } } 二)while循环： while循环语句格式一： while (循环条件语句①) { 循环体语句②； } tips： while(循环条件)中循环条件必须是boolean类型 执行流程： 第一步：执行循环条件语句①，看循环条件语句的值是true，还是false； 如果是true，执行第二步； 如果是false，循环语句中止，循环不再执行。 第二步：执行循环体语句②； 第三步：循环体语句执行完后，重新从第一步开始再执行一遍 while循环语句格式二： 初始化语句①； while (循环条件语句②) { 循环体语句③； 迭代语句④； } 执行流程： 第一步：执行初始化语句①，完成循环变量的初始化； 第二步：执行循环条件语句②，看循环条件语句的值是true，还是false； 如果是true，执行第三步； 如果是false，循环语句中止，循环不再执行。 第三步：执行循环体语句③ 第四步：执行迭代语句④，针对循环变量重新赋值 第五步：根据循环变量的新值，重新从第二步开始再执行一遍 三)do.</description>
+    </item>
     
     <item>
       <title>流程控制语句(分支结构) if&amp;switch</title>
