@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on My New Hugo Site</title>
+    <link>https:///derbo.github.io/post/</link>
+    <description>Recent content in Posts on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Jul 2019 18:31:47 +0800</lastBuildDate>
+    
+	<atom:link href="https:///derbo.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>基本数据类型和命名规范</title>
+      <link>https:///derbo.github.io/post/studyday01/</link>
+      <pubDate>Sun, 21 Jul 2019 18:31:47 +0800</pubDate>
+      
+      <guid>https:///derbo.github.io/post/studyday01/</guid>
+      <description>对我以学知识的整理
+我的GitHub:https://github.com/DerBo 一 、数据类型：
+关键字：byte short int long float double char boolean 一）基本数据类型 1.整型 byte(一个字节) short(两个字节) int(四个字节) long (8个字节) 2.浮点型 float(四个字节) double(八个字节) 3.字符型 char(两个字节) 4.布尔型 boolean 二）引用数据类型 1.class关键字定义的类 2.interface关键字定义的接口 3.数组  二 、命名规则(必须遵守)
+ #只能包含数字 字母 下划线和$符号，不能以数字开头，不能是关键字或保留字 错误用法： ① 1xx 2xx ② int，class,goto...等基本数据类型,关键字或保留字  三 、命名规范(自觉遵守)
+ #可以提高阅读性 变量名或方法名：驼峰命名法，xxxYyyZzz 接口或类名：Pascal命名法，XxxYyyZzz  四 、存储的数据
+byte(字节型): 存储范围为:0 ~ 2^7-1 (0 ~ 127) short(短整型): 存储范围为:-2^15 ~ 2^15-1 (-32768 ~ 32767) int(整型): 存储范围为:-2^31 ~ 2^31-1 (-2147483648 ~ 2147483647) long(长整型): 存储范围为:-2^63 ~ 2^63-1 (基本够用所以不再记录) float(单精度浮点型): 存储范围为:-3.</description>
+    </item>
+    
+    <item>
+      <title>我的第一篇博客</title>
+      <link>https:///derbo.github.io/post/blog/</link>
+      <pubDate>Sat, 20 Apr 2019 23:35:37 +0800</pubDate>
+      
+      <guid>https:///derbo.github.io/post/blog/</guid>
+      <description>我的第一篇博客，用来记录我学习的开始！！！加油！！！
+我的GitHub:https://github.com/DerBo</description>
+    </item>
+    
+  </channel>
+</rss>
