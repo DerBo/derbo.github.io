@@ -32,7 +32,7 @@
       <description>对我以学知识的整理
 我的GitHub:https://github.com/DerBo 前言： 不论哪一种编程语言，都会提供两种基本的流程控制结构： 分支结构和循环结构。
 其中分支结构用于实现根据条件来选择性地控制某段代码，循环结构则用与实现根据循环条件重复执行某段代码。  一 、顺序结构
- 顺序结构就是程序从上到下逐行地执行，中间没有(任何)判断和跳转如main方法的多行代码之间没有任何流程控制， 则程序总是从上向下依次执行，排在前面的代码先执行，排在后面的代码后执行。 public static void main(String[] args){ //顺序执行，根据编写的顺序，从上到下运行 System.out.println(1); System.out.println(2); System.out.println(3);} Console： 1 2 3  二 、分支结构
+ 顺序结构就是程序从上到下逐行地执行，中间没有(任何)判断和跳转如main方法的多行代码之间没有任何流程控制， 则程序总是从上向下依次执行，排在前面的代码先执行，排在后面的代码后执行。 public static void main(String[] args){ //顺序执行，根据编写的顺序，从上到下运行 System.out.println(1); System.out.println(2); System.out.println(3); } Console： 1 2 3  二 、分支结构
  通过 if 、if-else 、if-else if-else 来控制程序的运行流程。 一)if分支结构语句的第一种格式：if 语法格式： if(关系表达式)｛ 语句体; ｝ *执行流程 ①首先判断关系表达式看其结果是ture还是false ②如果是ture就执行语句体 ③如果是false就不执行语句体 public static void main(String[] args){ System.out.println(&amp;quot;开始&amp;quot;); // 定义两个变量 int a = 10; int b = 20; //变量使用if判断 if (a == b){ System.out.println(&amp;quot;a等于b&amp;quot;); } int c = 10; if(a == c){ System.</description>
     </item>
     
