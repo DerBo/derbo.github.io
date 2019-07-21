@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>流程控制语句(分支结构) if&amp;switch // My New Hugo Site</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://derbo.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="流程控制语句(分支结构) if&amp;switch"/>
+<meta name="twitter:description" content="对我以学知识的整理
+我的GitHub:https://github.com/DerBo 前言： 不论哪一种编程语言，都会提供两种基本的流程控制结构： 分支结构和循环结构。
+其中分支结构用于实现根据条件来选择性地控制某段代码，循环结构则用与实现根据循环条件重复执行某段代码。  一 、顺序结构
+ 顺序结构就是程序从上到下逐行地执行，中间没有(任何)判断和跳转如main方法的多行代码之间没有任何流程控制， 则程序总是从上向下依次执行，排在前面的代码先执行，排在后面的代码后执行。 public static void main(String[] args){ //顺序执行，根据编写的顺序，从上到下运行 System.out.println(1); System.out.println(2); System.out.println(3);  }
+Console： 1 2 3  二 、分支结构
+ 通过 if 、if-else 、if-else if-else 来控制程序的运行流程。 一)if分支结构语句的第一种格式：if 语法格式： if(关系表达式)｛ 语句体; ｝ *执行流程 ①首先判断关系表达式看其结果是ture还是false ②如果是ture就执行语句体 ③如果是false就不执行语句体 public static void main(String[] args){ System.out.println(&quot;开始&quot;); // 定义两个变量 int a = 10; int b = 20; //变量使用if判断 if (a == b){ System.out.println(&quot;a等于b&quot;); } int c = 10; if(a == c){ System."/>
+
+    <meta property="og:title" content="流程控制语句(分支结构) if&amp;switch" />
+<meta property="og:description" content="对我以学知识的整理
+我的GitHub:https://github.com/DerBo 前言： 不论哪一种编程语言，都会提供两种基本的流程控制结构： 分支结构和循环结构。
+其中分支结构用于实现根据条件来选择性地控制某段代码，循环结构则用与实现根据循环条件重复执行某段代码。  一 、顺序结构
+ 顺序结构就是程序从上到下逐行地执行，中间没有(任何)判断和跳转如main方法的多行代码之间没有任何流程控制， 则程序总是从上向下依次执行，排在前面的代码先执行，排在后面的代码后执行。 public static void main(String[] args){ //顺序执行，根据编写的顺序，从上到下运行 System.out.println(1); System.out.println(2); System.out.println(3);  }
+Console： 1 2 3  二 、分支结构
+ 通过 if 、if-else 、if-else if-else 来控制程序的运行流程。 一)if分支结构语句的第一种格式：if 语法格式： if(关系表达式)｛ 语句体; ｝ *执行流程 ①首先判断关系表达式看其结果是ture还是false ②如果是ture就执行语句体 ③如果是false就不执行语句体 public static void main(String[] args){ System.out.println(&quot;开始&quot;); // 定义两个变量 int a = 10; int b = 20; //变量使用if判断 if (a == b){ System.out.println(&quot;a等于b&quot;); } int c = 10; if(a == c){ System." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https:///derbo.github.io/post/studyday02/" />
+<meta property="article:published_time" content="2019-07-21T19:04:23&#43;08:00"/>
+<meta property="article:modified_time" content="2019-07-21T19:04:23&#43;08:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https:///derbo.github.io/"><img class="app-header-avatar" src="/derbo.github.io/avatar.jpg" alt="John Doe" /></a>
+      <h1>My New Hugo Site</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">流程控制语句(分支结构) if&amp;switch</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 21, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>对我以学知识的整理</p>
+
+<h2 id="我的github-https-github-com-derbo">我的GitHub:<a href="https://github.com/DerBo">https://github.com/DerBo</a></h2>
+
+<p>前言：
+    不论哪一种编程语言，都会提供两种基本的流程控制结构：
+分支结构和循环结构。</p>
+
+<pre><code>其中分支结构用于实现根据条件来选择性地控制某段代码，循环结构则用与实现根据循环条件重复执行某段代码。
+</code></pre>
+
+<hr />
+
+<p>一 、顺序结构</p>
+
+<pre><code> 顺序结构就是程序从上到下逐行地执行，中间没有(任何)判断和跳转如main方法的多行代码之间没有任何流程控制，
+ 则程序总是从上向下依次执行，排在前面的代码先执行，排在后面的代码后执行。
+
+public static void main(String[] args){
+
+ //顺序执行，根据编写的顺序，从上到下运行
+
+ System.out.println(1);
+ System.out.println(2);
+ System.out.println(3);
+</code></pre>
+
+<p>}</p>
+
+<pre><code>Console：
+1
+2
+3
+</code></pre>
+
+<hr />
+
+<p>二 、分支结构</p>
+
+<pre><code>  通过 if 、if-else 、if-else if-else 来控制程序的运行流程。
+
+一)if分支结构语句的第一种格式：if
+
+   语法格式：
+   if(关系表达式)｛
+       语句体;
+    ｝
+
+    *执行流程
+
+       ①首先判断关系表达式看其结果是ture还是false
+
+       ②如果是ture就执行语句体
+
+       ③如果是false就不执行语句体
+
+        public static void main(String[] args){
+            System.out.println(&quot;开始&quot;);
+            // 定义两个变量
+            int a = 10;
+            int b = 20;
+            //变量使用if判断
+            if (a == b){
+                System.out.println(&quot;a等于b&quot;);
+            }
+            int c = 10;
+            if(a == c){
+                System.out.println(&quot;a等于c&quot;);
+            }
+            System.out.println(&quot;结束&quot;);
+        ｝  
+
+二)if分支结构语句的第二种格式：if...else
+
+    语法格式：
+    if(关系表达式) { 
+        语句体1;
+    }else {
+        语句体2;
+    }
+
+    *执行流程
+         ①首先判断关系表达式看其结果是true还是false
+
+         ②如果是true就执行语句体1
+
+         ③如果是false就执行语句体2
+
+        public static void main(String[] args){
+         // 判断给定的数据是奇数还是偶数
+         // 定义变量
+        int a = 1;
+        if(a % 2 == 0) {
+                System.out.println(&quot;a是偶数&quot;);
+        } else{
+                System.out.println(&quot;a是奇数&quot;);
+        }
+                System.out.println(&quot;结束&quot;);
+        }
+
+三)if分支结构语句的第三种格式：if...else-if...else
+
+    语法格式：
+    if (判断条件1) {
+        执行语句1;
+    } else if (判断条件2) {
+        执行语句2;
+    }  
+    ...
+    }else if (判断条件n) {
+        执行语句n;
+    } else {
+        执行语句n+1;
+    }    
+
+    *执行流程
+
+         ①首先判断关系式1看其结果是true还是false
+
+         ②如果是true就执行语句体1，然后结束当前多分支
+
+         ③如果是flase就继续判断关系表达式2看其结果是true还是false
+         ....
+         n如果没有任何关系表达式为true，就执行语句体n+1，然后结束当前多分支
+
+        public static void main(String[] args) {
+        // x和y的关系满足如下：
+        // x&gt;=3 y = 2x + 1;
+        //-1&lt;=x&lt;3 y = 2x;
+        // x&lt;-1 y = 2x – 1;
+        // 根据给定的x的值，计算出y的值并输出。
+        // 定义变量
+        int x = 5;
+        int y;
+        if (x&gt;= 3) {
+            y = 2 * x + 1;
+        } else if (x &gt;= -1 &amp;&amp; x &lt; 3) {
+            y = 2 * x;
+        } else  {
+            y = 2 * x - 1;
+        }
+            System.out.println(&quot;y的值是：&quot;+y);
+        }   
+
+        //可以用if来区分交集在一起的情况  
+        public static void main(String[] args){ 
+        int score = 89；
+        if(score&lt;0 || score&gt;100){
+            System.out.println(&quot;你的成绩是错误的&quot;);      
+        }else if(score&gt;=90){
+            System.out.println(&quot;你的成绩属于优秀);
+        //隐含score&lt;90
+        }else if(score&gt;=80){
+            System.out.println(&quot;你的成绩属于好&quot;);
+        //隐含score&lt;80
+        }else if(score&gt;=70){
+            System.out.println(&quot;你的成绩属于良&quot;);
+        //隐含score&lt;70    
+        }else if(score&gt;=60){
+              System.out.println(&quot;你的成绩属于及格&quot;);
+        }else {
+            System.out.println(&quot;你的成绩属于不及格&quot;);
+        }   
+        }
+四)if分支结构：if...else嵌套
+
+     在if的语句块中，或者是在else语句块中,又包含了另外一个条件判断(可以是单分支、双分支、多分支)
+
+     执行的特点：
+
+     (1)如果是嵌套在if语句块中，则只有当外部的if条件满足，才会去判断内部的条件
+
+     (2)如果是嵌套在else语句块中，则只有当外部的if条件不满足，进入else后，才会去判断内部的条件
+
+     public static void main(String[] args){
+     //从键盘输入一个年份，和月份
+     java.util.Scanner input = new java.util.Scanner(System.in);
+
+     System.out.print(&quot;年份：&quot;);
+     int year = input.nextInt();
+
+     System.out.print(&quot;月份：&quot;);
+     int month = input.nextInt();
+
+     if(year&gt;0){
+        if(month&gt;=1 &amp;&amp; month&lt;=12){
+            //合法的情况
+            int days;
+            if(month==2){
+                if(year%4==0 &amp;&amp; year%100!=0 || year%400==0){
+                    days = 29;
+                }else{
+                    days = 28;
+                }
+            }else if(month==4 || month==6  || month==9 || month==11){
+                days = 30;
+            }else{
+                days = 31;
+            }
+            System.out.println(year+&quot;年&quot; + month + &quot;月有&quot; + days +&quot;天&quot;);
+        }else{
+            System.out.println(&quot;月份输入不合法&quot;);
+        }
+        }else{
+            System.out.println(&quot;年份输入不合法&quot;);
+        }
+    }
+
+五)switch分支结构：switch...case
+
+    语法格式：
+    switch(表达式){
+        case 常量值1:
+           语句块1;
+           【break;】
+        case 常量值2:
+           语句块2;
+           【break;】   
+        。。。
+        default:
+           语句块n+1;
+           【break;】
+    }
+
+    执行过程：
+    (1)入口
+
+    ①当swith(表达式)的值与case后面的某个常量值匹配，就从这个case进入；
+
+    ②当switch(表达式)的值与case后面的所有常量值都不匹配，选择default分支进入;不管default在哪里
+
+    (2)一旦从&quot;入口&quot;进入switch，就会顺序往下执行，直到遇到&quot;出口&quot;，即可能发生贯穿
+
+    (3)出口
+
+    ①自然出口:遇到了switch的结束，即没有找到匹配的case
+
+    ②中断出口:遇到了break等
+
+    **tips:
+      （1）switch(表达式)的值的类型，只能是：4种基本数据类型（byte,short,int,char），两种引用数据类型（JDK1.5之后枚举、JDK1.7之后String）
+
+      （2）case后面必须是常量值，而且不能重复
+
+    *case的穿透性*
+
+       在switch语句中，如果case的后面不写break，将出现穿透现象，也就是一旦匹配成功，不会再判断下一个case的值，直接向后运行，直到遇到break或者整
+       个switch语句结束，switch语句执行终止。
+
+        switch(month) {
+        case 1:
+        case 2:
+        case 12:
+            System.out.println(&quot;冬季&quot;);
+            break;
+        case 3:
+        case 4:
+        case 5:
+            System.out.println(&quot;春季&quot;);
+            break;
+        case 6:
+        case 7:
+        case 8:
+            System.out.println(&quot;夏季&quot;);
+            break;
+        case 9:
+        case 10:
+        case 11:
+            System.out.println(&quot;秋季&quot;);
+            break;
+        default:
+            System.out.println(&quot;你输入的月份有误&quot;);
+            break;
+        }
+</code></pre>
+
+<hr />
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
