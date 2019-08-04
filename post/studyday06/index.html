@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en-us">
   <head>
-    <title>别名现象 // My New Hugo Site</title>
+    <title>别名现象 // 我的博客</title>
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.55.6" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="John Doe" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="https://derbo.gitub.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+    <link rel="stylesheet" href="https://derbo.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
 
     
     <meta name="twitter:card" content="summary"/>
@@ -21,7 +21,7 @@
 我的GitHub:https://github.com/DerBo  对基本数据类型的赋值是很简单的。基本数据类型存储了实际的数值，而并非指向一个对象的引用，所以在为其赋值的时候， 是直接将一个地方的内容复制到了另一个地方，例如，对基本数据类型使用a=b，那么b的内容就复制给a。若修改了a的值，那么b不会受到影响。但是在为一个对象“赋值”的时候却不同，对一个对象操作，我们真正操作的是对对象的引用。所以，如果将一个对象赋值给另一个对象，实际是将引用从一个地方复制到另一个地方。
  例如：    class Tank{ int level; } public class Assignment{ public static void main(String[]args){ Tank t1 = new Tank(); Tank t2 = new Tank(); t1.level = 9; t2.level = 47; System.out.println(&quot;1: t1.level:&quot;&#43;t1.level&#43; &quot;,t2.level:&quot;&#43;t2.level); //实际上只是将t2对象的引用赋给了t1 t1=t2; System.out.println(&quot;1: t1.level:&quot;&#43;t1.level&#43; &quot;,t2.level:&quot;&#43;t2.level); //操纵了t2中的level t1.level = 27; System.out.println(&quot;1: t1.level:&quot;&#43;t1.level&#43; &quot;,t2.level:&quot;&#43;t2.level); } } /* Output : 1: 1: t1.level:9,t2.level:47 2: 1: t1.level:47,t2.level:47 3: 1: t1.level:27,t2.level:27 */   方法调用中的别名问题" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https:///derbo.gitub.io/post/studyday06/" />
+<meta property="og:url" content="https:///derbo.github.io/post/studyday06/" />
 <meta property="article:published_time" content="2019-07-23T13:41:42&#43;08:00"/>
 <meta property="article:modified_time" content="2019-07-23T13:41:42&#43;08:00"/>
 
@@ -29,8 +29,8 @@
   </head>
   <body>
     <header class="app-header">
-      <a href="https:///derbo.gitub.io/"><img class="app-header-avatar" src="/derbo.gitub.io/avatar.jpg" alt="John Doe" /></a>
-      <h1>My New Hugo Site</h1>
+      <a href="https:///derbo.github.io/"><img class="app-header-avatar" src="/derbo.github.io/avatar.jpg" alt="John Doe" /></a>
+      <h1>我的博客</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
       <div class="app-header-social">
         
