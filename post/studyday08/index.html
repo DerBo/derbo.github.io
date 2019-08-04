@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>数组排序算法   (一)冒泡排序 // My New Hugo Site</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://derbo.gitub.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数组排序算法   (一)冒泡排序"/>
+<meta name="twitter:description" content="对我以学知识的整理
+我的GitHub:https://github.com/DerBo 原理：通过将此元素和下一个(上一个)元素进行比较，如果此元素比下一个(上一个)元素大(小)则交换这两个下标之中元素的值。 思路：依次比较相邻的两个数，将小数放到前面，大数放到后面。
+即第一趟，首先比较第1个和第2个元素，将小数放到前面，大数放到后面。 然后比较第2个和第3个元素，将小数放到前面，大数放到后面。
+如此继续，直到比较最后两个数，将小数放到前面，大数放到后面。
+重复第一趟步骤，直至全部排序完成。
+/* {6,3,8,2,9,1} 第一轮： 第1次：arr[0]与arr[1]比较，6&gt;3成立，就交换，{3,6,8,2,9,1} 第2次：arr[1]与arr[2]比较，6&gt;8不成立，不交换{3,6,8,2,9,1} 第3次：arr[2]与arr[3]比较，8&gt;2成立，就交换，{3,6,2,8,9,1} 第4次：arr[3]与arr[4]比较，8&gt;9不成立，不交换{3,6,2,8,9,1} 第5次：arr[4]与arr[5]比较，9&gt;1成立，就交换，{3,6,2,8,1,9} 第一轮结果：{3,6,2,8,1,9} 9已经到达正确位置，下一轮不用在参与 第二轮： 第1次：arr[0]与arr[1]比较，3&gt;6不成立，不交换{3,6,2,8,1,9} 第2次：arr[1]与arr[2]比较，6&gt;2成立，就交换，{3,2,6,8,1,9} 第3次：arr[2]与arr[3]比较，6&gt;8不成立，不交换{3,2,6,8,1,9} 第4次：arr[3]与arr[4]比较，8&gt;1成立，就交换，{3,2,6,1,8,9} 第二轮结果：{3,2,6,1,8,9} 8已经到达正确位置，下一轮不用在参与 第三轮： 第1次：arr[0]与arr[1]比较，3&gt;2成立，就交换，{2,3,6,1,8,9} 第2次：arr[1]与arr[2]比较，3&gt;6不成立，不交换{2,3,6,1,8,9} 第3次：arr[2]与arr[3]比较，6&gt;1成立，就交换，{2,3,1,6,8,9} 第三轮结果：{2,3,1,6,8,9} 6已经到达正确位置，下一轮不用在参与 第四轮： 第1次：arr[0]与arr[1]比较，2&gt;3不成立，不交换{2,3,1,6,8,9} 第2次：arr[1]与arr[2]比较，3&gt;1成立，就交换，{2,1,3,6,8,9} 第四轮结果：{2,1,3,6,8,9} 3已经到达正确位置，下一轮不用在参与 第五轮 第1次：arr[0]与arr[1]比较，2&gt;1成立，就交换，{1,2,3,6,8,9} 第五轮结果：{1,2,3,6,8,9} 2已经到达正确位置，下一轮不用在参与 剩下1，肯定是最小的了，不用比较了 6个元素，比较了5轮， n个元素需要n-1轮 每一轮比较很多次 */ public static void main(String[] args){ int[] arr = {6,3,8,2,9,1}; //arr.length = 6 //i=1,2,3,4,5 一共5轮 for(int i=1; i&lt;arr.length; i&#43;&#43;){//轮数 /* i=1，第1轮，j=0,1,2,3,4 arr[j]与arr[j&#43;1] i=2，第2轮，j=0,1,2,3 arr[j]与arr[j&#43;1] i=3，第3轮，j=0,1,2 arr[j]与arr[j&#43;1] i=4，第4轮，j=0,1 arr[j]与arr[j&#43;1] i=5，第5轮，j=0 arr[j]与arr[j&#43;1] j=0, j&lt;=arr."/>
+
+    <meta property="og:title" content="数组排序算法   (一)冒泡排序" />
+<meta property="og:description" content="对我以学知识的整理
+我的GitHub:https://github.com/DerBo 原理：通过将此元素和下一个(上一个)元素进行比较，如果此元素比下一个(上一个)元素大(小)则交换这两个下标之中元素的值。 思路：依次比较相邻的两个数，将小数放到前面，大数放到后面。
+即第一趟，首先比较第1个和第2个元素，将小数放到前面，大数放到后面。 然后比较第2个和第3个元素，将小数放到前面，大数放到后面。
+如此继续，直到比较最后两个数，将小数放到前面，大数放到后面。
+重复第一趟步骤，直至全部排序完成。
+/* {6,3,8,2,9,1} 第一轮： 第1次：arr[0]与arr[1]比较，6&gt;3成立，就交换，{3,6,8,2,9,1} 第2次：arr[1]与arr[2]比较，6&gt;8不成立，不交换{3,6,8,2,9,1} 第3次：arr[2]与arr[3]比较，8&gt;2成立，就交换，{3,6,2,8,9,1} 第4次：arr[3]与arr[4]比较，8&gt;9不成立，不交换{3,6,2,8,9,1} 第5次：arr[4]与arr[5]比较，9&gt;1成立，就交换，{3,6,2,8,1,9} 第一轮结果：{3,6,2,8,1,9} 9已经到达正确位置，下一轮不用在参与 第二轮： 第1次：arr[0]与arr[1]比较，3&gt;6不成立，不交换{3,6,2,8,1,9} 第2次：arr[1]与arr[2]比较，6&gt;2成立，就交换，{3,2,6,8,1,9} 第3次：arr[2]与arr[3]比较，6&gt;8不成立，不交换{3,2,6,8,1,9} 第4次：arr[3]与arr[4]比较，8&gt;1成立，就交换，{3,2,6,1,8,9} 第二轮结果：{3,2,6,1,8,9} 8已经到达正确位置，下一轮不用在参与 第三轮： 第1次：arr[0]与arr[1]比较，3&gt;2成立，就交换，{2,3,6,1,8,9} 第2次：arr[1]与arr[2]比较，3&gt;6不成立，不交换{2,3,6,1,8,9} 第3次：arr[2]与arr[3]比较，6&gt;1成立，就交换，{2,3,1,6,8,9} 第三轮结果：{2,3,1,6,8,9} 6已经到达正确位置，下一轮不用在参与 第四轮： 第1次：arr[0]与arr[1]比较，2&gt;3不成立，不交换{2,3,1,6,8,9} 第2次：arr[1]与arr[2]比较，3&gt;1成立，就交换，{2,1,3,6,8,9} 第四轮结果：{2,1,3,6,8,9} 3已经到达正确位置，下一轮不用在参与 第五轮 第1次：arr[0]与arr[1]比较，2&gt;1成立，就交换，{1,2,3,6,8,9} 第五轮结果：{1,2,3,6,8,9} 2已经到达正确位置，下一轮不用在参与 剩下1，肯定是最小的了，不用比较了 6个元素，比较了5轮， n个元素需要n-1轮 每一轮比较很多次 */ public static void main(String[] args){ int[] arr = {6,3,8,2,9,1}; //arr.length = 6 //i=1,2,3,4,5 一共5轮 for(int i=1; i&lt;arr.length; i&#43;&#43;){//轮数 /* i=1，第1轮，j=0,1,2,3,4 arr[j]与arr[j&#43;1] i=2，第2轮，j=0,1,2,3 arr[j]与arr[j&#43;1] i=3，第3轮，j=0,1,2 arr[j]与arr[j&#43;1] i=4，第4轮，j=0,1 arr[j]与arr[j&#43;1] i=5，第5轮，j=0 arr[j]与arr[j&#43;1] j=0, j&lt;=arr." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https:///derbo.gitub.io/post/studyday08/" />
+<meta property="article:published_time" content="2019-07-26T13:37:52&#43;08:00"/>
+<meta property="article:modified_time" content="2019-07-26T13:37:52&#43;08:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https:///derbo.gitub.io/"><img class="app-header-avatar" src="/derbo.gitub.io/avatar.jpg" alt="John Doe" /></a>
+      <h1>My New Hugo Site</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">数组排序算法   (一)冒泡排序</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 26, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>对我以学知识的整理</p>
+
+<h2 id="我的github-https-github-com-derbo">我的GitHub:<a href="https://github.com/DerBo">https://github.com/DerBo</a></h2>
+
+<h2 id="原理-通过将此元素和下一个-上一个-元素进行比较-如果此元素比下一个-上一个-元素大-小-则交换这两个下标之中元素的值">原理：通过将此元素和下一个(上一个)元素进行比较，如果此元素比下一个(上一个)元素大(小)则交换这两个下标之中元素的值。</h2>
+
+<p>思路：依次比较相邻的两个数，将小数放到前面，大数放到后面。</p>
+
+<p>即第一趟，首先比较第1个和第2个元素，将小数放到前面，大数放到后面。
+然后比较第2个和第3个元素，将小数放到前面，大数放到后面。</p>
+
+<p>如此继续，直到比较最后两个数，将小数放到前面，大数放到后面。</p>
+
+<p>重复第一趟步骤，直至全部排序完成。</p>
+
+<pre><code class="language-java">    /*
+    {6,3,8,2,9,1}
+    第一轮：
+	第1次：arr[0]与arr[1]比较，6&gt;3成立，就交换，{3,6,8,2,9,1}
+	第2次：arr[1]与arr[2]比较，6&gt;8不成立，不交换{3,6,8,2,9,1}
+	第3次：arr[2]与arr[3]比较，8&gt;2成立，就交换，{3,6,2,8,9,1}
+	第4次：arr[3]与arr[4]比较，8&gt;9不成立，不交换{3,6,2,8,9,1}
+	第5次：arr[4]与arr[5]比较，9&gt;1成立，就交换，{3,6,2,8,1,9}
+	
+	第一轮结果：{3,6,2,8,1,9}   9已经到达正确位置，下一轮不用在参与
+
+	第二轮：
+	第1次：arr[0]与arr[1]比较，3&gt;6不成立，不交换{3,6,2,8,1,9}
+	第2次：arr[1]与arr[2]比较，6&gt;2成立，就交换，{3,2,6,8,1,9}
+	第3次：arr[2]与arr[3]比较，6&gt;8不成立，不交换{3,2,6,8,1,9}
+	第4次：arr[3]与arr[4]比较，8&gt;1成立，就交换，{3,2,6,1,8,9}
+	
+	第二轮结果：{3,2,6,1,8,9}   8已经到达正确位置，下一轮不用在参与
+	
+	第三轮：
+	第1次：arr[0]与arr[1]比较，3&gt;2成立，就交换，{2,3,6,1,8,9}
+	第2次：arr[1]与arr[2]比较，3&gt;6不成立，不交换{2,3,6,1,8,9}
+	第3次：arr[2]与arr[3]比较，6&gt;1成立，就交换，{2,3,1,6,8,9}
+	
+	第三轮结果：{2,3,1,6,8,9}   6已经到达正确位置，下一轮不用在参与
+	
+	第四轮：
+	第1次：arr[0]与arr[1]比较，2&gt;3不成立，不交换{2,3,1,6,8,9} 
+	第2次：arr[1]与arr[2]比较，3&gt;1成立，就交换，{2,1,3,6,8,9} 
+	
+	第四轮结果：{2,1,3,6,8,9}    3已经到达正确位置，下一轮不用在参与
+	
+	第五轮
+	第1次：arr[0]与arr[1]比较，2&gt;1成立，就交换，{1,2,3,6,8,9}
+	
+	第五轮结果：{1,2,3,6,8,9}   2已经到达正确位置，下一轮不用在参与
+	
+	剩下1，肯定是最小的了，不用比较了
+	
+	6个元素，比较了5轮， n个元素需要n-1轮
+	每一轮比较很多次
+    */
+
+     public static void main(String[] args){
+		int[] arr = {6,3,8,2,9,1};  //arr.length = 6
+		
+		//i=1,2,3,4,5  一共5轮
+		for(int i=1; i&lt;arr.length; i++){//轮数
+			/*
+			i=1，第1轮，j=0,1,2,3,4   arr[j]与arr[j+1]
+			i=2，第2轮，j=0,1,2,3     arr[j]与arr[j+1]
+			i=3，第3轮，j=0,1,2       arr[j]与arr[j+1]
+			i=4，第4轮，j=0,1         arr[j]与arr[j+1]
+			i=5，第5轮，j=0           arr[j]与arr[j+1]
+			
+			j=0, j&lt;=arr.length-1-i
+			*/
+			for(int j=0; j&lt;=arr.length-1-i; j++){
+				if(arr[j] &gt; arr[j+1]){
+					int temp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = temp;
+				}
+			}
+		}
+		
+		//结果
+		for(int i=0; i&lt;arr.length; i++){
+			System.out.print(arr[i] + &quot; &quot;);
+		}
+	}
+</code></pre>
+
+<ul>
+<li>冒泡排序和其他排序的优势是可以检测数列是否是已经排好序的</li>
+</ul>
+
+<hr />
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

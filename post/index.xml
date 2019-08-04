@@ -2,33 +2,150 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on My New Hugo Site</title>
-    <link>https:///derbo.github.io/post/</link>
+    <link>https:///derbo.gitub.io/post/</link>
     <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Jul 2019 19:04:59 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Aug 2019 15:42:55 +0800</lastBuildDate>
     
-	<atom:link href="https:///derbo.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https:///derbo.gitub.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>实例变量和局部变量区别</title>
+      <link>https:///derbo.gitub.io/post/studyday13/</link>
+      <pubDate>Thu, 01 Aug 2019 15:42:55 +0800</pubDate>
+      
+      <guid>https:///derbo.gitub.io/post/studyday13/</guid>
+      <description> 对我以学知识的整理
+我的GitHub:https://github.com/DerBo  在类中的位置不同
+ 实例变量：类中，方法外
+例如：
+public class A{ private int a;//实例变量 public void f(){}; }   局部变量：方法中或者方法声明上(形式参数)  例如：
+public class A{ public void f(){ int a;//局部变量 }; }   作用范围不一样
+ 实例变量：类中直接用，其他类通过&amp;rdquo;对象名.实例变量&amp;rdquo;使用 局部变量：当前方法的作用域中  初始化值的不同
+ 实例变量：有默认值 局部变量：没有默认值。必须先定义，赋值，最后使用  在内存中的位置不同
+ 实例变量：堆内存 局部变量：栈内存  生命周期不同
+ 实例变量：随着对象的创建或者类的加载而存在，随着对象的消失而消失 换句话说，没有创建对象，就不会在堆中分配它的内存，创建一个，分配一个 局部变量：随着方法的调用而存在，随着方法的调用完毕而消失 换句话说，方法没有被调用，该局部变量不会在栈中分配内存，调用一次，分配一次   </description>
+    </item>
+    
+    <item>
+      <title>自动递增和递减 i&#43;&#43;和&#43;&#43;i的区别</title>
+      <link>https:///derbo.gitub.io/post/studyday12/</link>
+      <pubDate>Thu, 01 Aug 2019 14:40:31 +0800</pubDate>
+      
+      <guid>https:///derbo.gitub.io/post/studyday12/</guid>
+      <description>对我以学知识的整理
+我的GitHub:https://github.com/DerBo  递增操作符是“++”，意为“增加一个单位”。递减操作符是“&amp;ndash;”，意为“减少一个单位”。这两种操作符各有两种使用方式，通常称为“前缀式”和后缀式。“前缀递增”表示“++”操作符位于变量或表达式的前面；而“后缀递增”表示“++”操作符位于变量或表达式的后面。 对于前缀递增和前缀递减，会先执行运算，再生成值。而对于后缀递增和后缀递减，会先生成值再执行运算
+例如：
+  public class AutoInc{ public static void main(String[]args){ int i = 1; System.out.println(&amp;quot;i :&amp;quot; + i); //i先加1再赋值给i 结果为2 System.out.println(&amp;quot;++i :&amp;quot; + ++i); //i先输出结果，后再自增1 System.out.println(&amp;quot;i++ :&amp;quot; + i++); System.out.println(&amp;quot;i :&amp;quot; + i); //i先减1再赋值给i 结果为2 System.out.println(&amp;quot;--i :&amp;quot; + --i); //i先赋值给i 再减1 结果为2 System.out.println(&amp;quot;i-- :&amp;quot; + i--); //i为1 System.out.println(&amp;quot;i :&amp;quot; + i); } }/* i : 1 ++i : 2 i++ : 2 i : 3 --i : 2 i-- : 2 i : 1 */ public class AutoInc2{ public static void main(String[]args){ int i = 2; //相当于i=i*i++ //i先和前面的i相乘再+1 i*=i++; System.</description>
+    </item>
+    
+    <item>
+      <title>数组排序算法   (四)希尔排序</title>
+      <link>https:///derbo.gitub.io/post/studyday11/</link>
+      <pubDate>Mon, 29 Jul 2019 13:18:05 +0800</pubDate>
+      
+      <guid>https:///derbo.gitub.io/post/studyday11/</guid>
+      <description> 对我以学知识的整理
+我的GitHub:https://github.com/DerBo 一种通过比较相距一定间隔的元素进行排序，每一趟比较所用的距离随着算法的进行而减小，直到只比较相邻元素的最后一趟排序位置，所以希尔排序有时也叫做缩减增量排序 public void ShellSort(int[] arr) { // 3,2,9,3,6,5,8 length()7 n=7 //定义增量的最大值N int N = arr.length; //内部循环每运行一次 增量减少一半 for (int h = N / 2; h &amp;gt; 0; h /= 2) { for (int i = h; i &amp;lt; N; i++) { for (int j = i; j &amp;gt;= h &amp;amp;&amp;amp; arr[j] &amp;lt; arr[j - h]; j -= h) { //交换元素 arr[i] = arr[j]; arr[j] = arr[j - h]; arr[j - h] = arr[i]; } } } }   对于h，h+1&amp;hellip;,N-1中的每一个位置i，把其上的元素放到i，i-h，i-2h，&amp;hellip;中的正确位置上，通过仔细观察可以发现，没一趟h排序的作用就是对h个独立的子数组执行一次插入排序。  </description>
+    </item>
+    
+    <item>
+      <title>数组排序算法   (三)插入排序</title>
+      <link>https:///derbo.gitub.io/post/studyday10/</link>
+      <pubDate>Sat, 27 Jul 2019 13:33:25 +0800</pubDate>
+      
+      <guid>https:///derbo.gitub.io/post/studyday10/</guid>
+      <description>对我以学知识的整理
+我的GitHub:https://github.com/DerBo 数据结构与算法分析：最简单的排序算法之一，插入排序由N-1趟排序组成。对于p=1到N-1趟，插入排序保证从位置0到位置p上的元素为已排序状态。插入排序利用了这样的原理：位置0到位置p-1上的元素已经处于排过序的状态。 一 、代码
+// 插入排序 public void ChaRu(int[] arr) { int j = 0; for (int i = 1; i &amp;lt; arr.length; i++) { //保存当前位置元素的内容 int p = arr[i]; //每一次都把前一个大于此元素的元素排在后面已经排好的队列当中 for (j = i; j &amp;gt; 0 &amp;amp;&amp;amp; arr[i] &amp;lt; arr[j - 1]; j--) { arr[j] = arr[j - 1]; arr[j - 1] = p; } } }  原始数组 34 8 64 51 32 21 移动的位置 p=1趟后 8 34 64 51 32 21 1 p=2趟后 8 34 64 51 32 21 0 p=3趟后 8 34 51 64 32 21 1 p=4趟后 8 32 34 51 64 21 3 p=5趟后 8 21 32 34 51 61 4  二 、 复杂度</description>
+    </item>
+    
+    <item>
+      <title>数组排序算法   (二)直接排序</title>
+      <link>https:///derbo.gitub.io/post/studyday09/</link>
+      <pubDate>Sat, 27 Jul 2019 13:13:37 +0800</pubDate>
+      
+      <guid>https:///derbo.gitub.io/post/studyday09/</guid>
+      <description>对我以学知识的整理
+我的GitHub:https://github.com/DerBo 原理：将一个数作为基准(默认选第一个元素)，用一个数据类型存储起来，通过将它后面的元素和保存的元素相比较，比它小(大)的和他交换位置，这样进行N-1次的遍历就可排好数组。 一 、代码
+int[] arr = {49,38,65,97,76,13,27,49}; for(int i=1; i&amp;lt;arr.length; i++){//外循环的次数 = 轮数 = 数组的长度-1 //（1）找出本轮未排序元素中的最值 /* 未排序元素： 第1轮：i=1,未排序，[0,7] 第2轮：i=2,未排序，[1,7] ... 第7轮：i=7,未排序，[6,7] 每一轮未排序元素的起始下标：0,1,2,3,4,5,6，正好是i-1的 未排序的后面的元素依次： 第1轮：[1,7] j=1,2,3,4,5,6,7 第2轮：[2,4] j=2,3,4,5,6,7 。。。。 第7轮：[7] j=7 j的起点是i，终点都是7 */ int max = arr[i-1]; int index = i-1; for(int j=i; j&amp;lt;arr.length; j++){ if(arr[j] &amp;gt; max){ max = arr[j]; index = j; } } //（2）如果这个最值没有在它应该在的位置，就与这个位置的元素交换 /* 第1轮，最大值应该在[0] 第2轮，最大值应该在[1] .... 第7轮，最大值应该在[6] 正好是i-1的值 */ if(index != i-1){ //交换arr[i-1]与arr[index] int temp = arr[i-1]; arr[i-1] = arr[index]; arr[index] = temp; } } //显示结果 for(int i=0; i&amp;lt;arr.</description>
+    </item>
+    
+    <item>
+      <title>数组排序算法   (一)冒泡排序</title>
+      <link>https:///derbo.gitub.io/post/studyday08/</link>
+      <pubDate>Fri, 26 Jul 2019 13:37:52 +0800</pubDate>
+      
+      <guid>https:///derbo.gitub.io/post/studyday08/</guid>
+      <description>对我以学知识的整理
+我的GitHub:https://github.com/DerBo 原理：通过将此元素和下一个(上一个)元素进行比较，如果此元素比下一个(上一个)元素大(小)则交换这两个下标之中元素的值。 思路：依次比较相邻的两个数，将小数放到前面，大数放到后面。
+即第一趟，首先比较第1个和第2个元素，将小数放到前面，大数放到后面。 然后比较第2个和第3个元素，将小数放到前面，大数放到后面。
+如此继续，直到比较最后两个数，将小数放到前面，大数放到后面。
+重复第一趟步骤，直至全部排序完成。
+/* {6,3,8,2,9,1} 第一轮： 第1次：arr[0]与arr[1]比较，6&amp;gt;3成立，就交换，{3,6,8,2,9,1} 第2次：arr[1]与arr[2]比较，6&amp;gt;8不成立，不交换{3,6,8,2,9,1} 第3次：arr[2]与arr[3]比较，8&amp;gt;2成立，就交换，{3,6,2,8,9,1} 第4次：arr[3]与arr[4]比较，8&amp;gt;9不成立，不交换{3,6,2,8,9,1} 第5次：arr[4]与arr[5]比较，9&amp;gt;1成立，就交换，{3,6,2,8,1,9} 第一轮结果：{3,6,2,8,1,9} 9已经到达正确位置，下一轮不用在参与 第二轮： 第1次：arr[0]与arr[1]比较，3&amp;gt;6不成立，不交换{3,6,2,8,1,9} 第2次：arr[1]与arr[2]比较，6&amp;gt;2成立，就交换，{3,2,6,8,1,9} 第3次：arr[2]与arr[3]比较，6&amp;gt;8不成立，不交换{3,2,6,8,1,9} 第4次：arr[3]与arr[4]比较，8&amp;gt;1成立，就交换，{3,2,6,1,8,9} 第二轮结果：{3,2,6,1,8,9} 8已经到达正确位置，下一轮不用在参与 第三轮： 第1次：arr[0]与arr[1]比较，3&amp;gt;2成立，就交换，{2,3,6,1,8,9} 第2次：arr[1]与arr[2]比较，3&amp;gt;6不成立，不交换{2,3,6,1,8,9} 第3次：arr[2]与arr[3]比较，6&amp;gt;1成立，就交换，{2,3,1,6,8,9} 第三轮结果：{2,3,1,6,8,9} 6已经到达正确位置，下一轮不用在参与 第四轮： 第1次：arr[0]与arr[1]比较，2&amp;gt;3不成立，不交换{2,3,1,6,8,9} 第2次：arr[1]与arr[2]比较，3&amp;gt;1成立，就交换，{2,1,3,6,8,9} 第四轮结果：{2,1,3,6,8,9} 3已经到达正确位置，下一轮不用在参与 第五轮 第1次：arr[0]与arr[1]比较，2&amp;gt;1成立，就交换，{1,2,3,6,8,9} 第五轮结果：{1,2,3,6,8,9} 2已经到达正确位置，下一轮不用在参与 剩下1，肯定是最小的了，不用比较了 6个元素，比较了5轮， n个元素需要n-1轮 每一轮比较很多次 */ public static void main(String[] args){ int[] arr = {6,3,8,2,9,1}; //arr.length = 6 //i=1,2,3,4,5 一共5轮 for(int i=1; i&amp;lt;arr.length; i++){//轮数 /* i=1，第1轮，j=0,1,2,3,4 arr[j]与arr[j+1] i=2，第2轮，j=0,1,2,3 arr[j]与arr[j+1] i=3，第3轮，j=0,1,2 arr[j]与arr[j+1] i=4，第4轮，j=0,1 arr[j]与arr[j+1] i=5，第5轮，j=0 arr[j]与arr[j+1] j=0, j&amp;lt;=arr.</description>
+    </item>
+    
+    <item>
+      <title>数组（二）</title>
+      <link>https:///derbo.gitub.io/post/studyday07/</link>
+      <pubDate>Tue, 23 Jul 2019 13:44:19 +0800</pubDate>
+      
+      <guid>https:///derbo.gitub.io/post/studyday07/</guid>
+      <description>对我以学知识的整理
+我的GitHub:https://github.com/DerBo 二维数组 ：二维数组本质上就是元素为一维数组的数组
+一 、二维数组的标记：[][]  int[][] arr; //arr是一个二维数组，可以看成元素是int[]一维数组类型的一个数组  二 、二维数组的声明 语法格式： 格式一：  //推荐 元素的数据类型[][] 二维数组的名称; 格式二： //不推荐 元素的数据类型 二维数组名[][]; 格式三： //不推荐 元素的数据类型[] 二维数组名[];  注意：int[] x, y[]; //x是一维数组，y是二维数组
+三 、二维数组的初始化
+ 1.静态初始化 元素的数据类型[][] 二维数组名 = new 元素的数据类型[][]{ {元素1，元素2，元素3 。。。}, {第二行的值列表}, ... {第n行的值列表} }; 元素的数据类型[][] 二维数组名; 二维数组名 = new 元素的数据类型[][]{ {元素1，元素2，元素3 。。。}, {第二行的值列表}, ... {第n行的值列表} }; //以下格式要求声明与静态初始化必须一起完成 元素的数据类型[][] 二维数组的名称 = { {元素1，元素2，元素3 。。。}, {第二行的值列表}, ... {第n行的值列表} }; 例如：  int[][] arr; arr = new int[][]{{1,2,3},{4,5,6},{7,8,9}}; int[][] arr = new int[][]{{1,2,3},{4,5,6},{7,8,9}}; int[][] arr = {{1,2,3},{4,5,6},{7,8,9}};//声明与初始化必须在一句完成  public static void main(String[] args) { //定义数组 int[][] arr = {{1,2,3},{4,5},{6}}; System.</description>
+    </item>
+    
+    <item>
+      <title>别名现象</title>
+      <link>https:///derbo.gitub.io/post/studyday06/</link>
+      <pubDate>Tue, 23 Jul 2019 13:41:42 +0800</pubDate>
+      
+      <guid>https:///derbo.gitub.io/post/studyday06/</guid>
+      <description>对我以学知识的整理
+我的GitHub:https://github.com/DerBo  对基本数据类型的赋值是很简单的。基本数据类型存储了实际的数值，而并非指向一个对象的引用，所以在为其赋值的时候， 是直接将一个地方的内容复制到了另一个地方，例如，对基本数据类型使用a=b，那么b的内容就复制给a。若修改了a的值，那么b不会受到影响。但是在为一个对象“赋值”的时候却不同，对一个对象操作，我们真正操作的是对对象的引用。所以，如果将一个对象赋值给另一个对象，实际是将引用从一个地方复制到另一个地方。
+ 例如：    class Tank{ int level; } public class Assignment{ public static void main(String[]args){ Tank t1 = new Tank(); Tank t2 = new Tank(); t1.level = 9; t2.level = 47; System.out.println(&amp;quot;1: t1.level:&amp;quot;+t1.level+ &amp;quot;,t2.level:&amp;quot;+t2.level); //实际上只是将t2对象的引用赋给了t1 t1=t2; System.out.println(&amp;quot;1: t1.level:&amp;quot;+t1.level+ &amp;quot;,t2.level:&amp;quot;+t2.level); //操纵了t2中的level t1.level = 27; System.out.println(&amp;quot;1: t1.level:&amp;quot;+t1.level+ &amp;quot;,t2.level:&amp;quot;+t2.level); } } /* Output : 1: 1: t1.level:9,t2.level:47 2: 1: t1.level:47,t2.level:47 3: 1: t1.level:27,t2.level:27 */   方法调用中的别名问题</description>
+    </item>
+    
+    <item>
+      <title>数组（一）</title>
+      <link>https:///derbo.gitub.io/post/studyday05/</link>
+      <pubDate>Mon, 22 Jul 2019 13:12:12 +0800</pubDate>
+      
+      <guid>https:///derbo.gitub.io/post/studyday05/</guid>
+      <description>对我以学知识的整理
+我的GitHub:https://github.com/DerBo  数组(Array),就是相同数据类型的元素按一定顺序排列的集合,就是把有限个类型相同的变量用一个名字命名, 以便统一管理它们,然后用编号区分他们,这个名字称为数组名,编号称为下标或索引(index),组成数组的各个 变量称为数组的元素(element),数组中元素的个数称为数组的长度(length)。  一 、一维数组的定义方式
+ 1.静态初始化
+ 格式一 ：数据类型[] 数组名={元素1，元素2，元素3&amp;hellip;}; //只能 在一个语句中完成，不能分开两个语句写
+ 比如：定义一个由几个整型组成的数组 int[] arr = {1,2,3,4,5};//正确 int[] arr; arr = {1,2,3,4,5};//错误  格式二 ：数据类型[] 数组名 = new 数据类型 []{元素1，元素2，元素3&amp;hellip;};
+ 比如：定义一个由几个整型组成的数组 int[] arr = new int[]{1,2,3,4,5};//正确 int[] arr; arr = new int[]{1,2,3,4,5};//正确   2.动态初始化
+ 格式三 ：数组存储的元素的数据类型[] 数组名字 = new 数组存储元素的数据类型[长度]； 或 数组存储的数据类型[]数组名字；
+ 数组名字 = new 数组存储的数据类型[长度]；  注意：
+ 数组的长度一旦指定后就不能更改，在容器和Arrays工具类中的动态数组，copy工具都是在内部新增 了一个更大的数组，然后将原数组的引用指向新数组。 数据局部变量的动态初始化是指new新数组并指定长度的时候，数组的元素会初始化为0，而不是nullSystem.</description>
+    </item>
+    
+    <item>
       <title>循环控制语句</title>
-      <link>https:///derbo.github.io/post/studyday04/</link>
+      <link>https:///derbo.gitub.io/post/studyday04/</link>
       <pubDate>Sun, 21 Jul 2019 19:04:59 +0800</pubDate>
       
-      <guid>https:///derbo.github.io/post/studyday04/</guid>
+      <guid>https:///derbo.gitub.io/post/studyday04/</guid>
       <description>对我以学知识的整理
 我的GitHub:https://github.com/DerBo 一 、break
- 经常使用在 switch 等各种循环语句中，作用是跳出当前循环并返回外部循环 的起始位置开始第二次循环，如果循环为for循环则迭代表达式会自增 ①在选择结构switch语句中 ②在循环语句中 ③离开使用场景的存在是没有意义的 public static void main(String[] args){ java.util.Scanner input = new java.util.Scanner(System.in); System.out.print(&amp;quot;请输入一个正整数：&amp;quot;); int num = input.nextInt(); boolean flag = true; for (int i = 2; i &amp;lt;= Math.sqrt(num) ; i++) { if(num%i==0){ flag = false;//这里即使break，i也会自增 break; } } System.out.println(num + (flag?&amp;quot;是&amp;quot;:&amp;quot;不是&amp;quot;) + &amp;quot;素数&amp;quot;); }  二 、continue
- 经常使用在：结束本次循环，继续下一次的循环，如果main进程遇到continue则 立即结束本次循环，同时迭代表达式也会自增 //打印1-100之间的整数，跳过7的倍数和7结尾的数 public static void main(String[] args){ //打印1-100之间的整数，跳过7的倍数和7结尾的数 for(int i=1; i&amp;lt;=100; i++){ if(i%7==0 || i%10==7){ continue; //break; } System.</description>
+ 经常使用在 switch 等各种循环语句中，作用是跳出当前循环并返回外部循环 的起始位置开始第二次循环，如果循环为for循环则迭代表达式会自增 ①在选择结构switch语句中 ②在循环语句中 ③离开使用场景的存在是没有意义的  public static void main(String[] args){ java.util.Scanner input = new java.util.Scanner(System.in); System.out.print(&amp;quot;请输入一个正整数：&amp;quot;); int num = input.nextInt(); boolean flag = true; for (int i = 2; i &amp;lt;= Math.sqrt(num) ; i++) { if(num%i==0){ flag = false;//这里即使break，i也会自增 break; } } System.out.println(num + (flag?&amp;quot;是&amp;quot;:&amp;quot;不是&amp;quot;) + &amp;quot;素数&amp;quot;); }  二 、continue
+ 经常使用在：结束本次循环，继续下一次的循环，如果main进程遇到continue则 立即结束本次循环，同时迭代表达式也会自增  //打印1-100之间的整数，跳过7的倍数和7结尾的数 public static void main(String[] args){ //打印1-100之间的整数，跳过7的倍数和7结尾的数 for(int i=1; i&amp;lt;=100; i++){ if(i%7==0 || i%10==7){ continue; //break; } System.</description>
     </item>
     
     <item>
       <title>流程控制语句(循环结构) for&amp;while&amp;do..while</title>
-      <link>https:///derbo.github.io/post/studyday03/</link>
+      <link>https:///derbo.gitub.io/post/studyday03/</link>
       <pubDate>Sun, 21 Jul 2019 19:04:37 +0800</pubDate>
       
-      <guid>https:///derbo.github.io/post/studyday03/</guid>
+      <guid>https:///derbo.gitub.io/post/studyday03/</guid>
       <description>对我以学知识的整理
 我的GitHub:https://github.com/DerBo 前言： 不论哪一种编程语言，都会提供两种基本的流程控制结构： 分支结构和循环结构。
 其中分支结构用于实现根据条件来选择性地控制某段代码，循环结构则用与实现根据循环条件重复执行某段代码。  三 、循环结构
@@ -37,23 +154,23 @@
     
     <item>
       <title>流程控制语句(分支结构) if&amp;switch</title>
-      <link>https:///derbo.github.io/post/studyday02/</link>
+      <link>https:///derbo.gitub.io/post/studyday02/</link>
       <pubDate>Sun, 21 Jul 2019 19:04:23 +0800</pubDate>
       
-      <guid>https:///derbo.github.io/post/studyday02/</guid>
+      <guid>https:///derbo.gitub.io/post/studyday02/</guid>
       <description>对我以学知识的整理
 我的GitHub:https://github.com/DerBo 前言： 不论哪一种编程语言，都会提供两种基本的流程控制结构： 分支结构和循环结构。
 其中分支结构用于实现根据条件来选择性地控制某段代码，循环结构则用与实现根据循环条件重复执行某段代码。  一 、顺序结构
- 顺序结构就是程序从上到下逐行地执行，中间没有(任何)判断和跳转如main方法的多行代码之间没有任何流程控制， 则程序总是从上向下依次执行，排在前面的代码先执行，排在后面的代码后执行。 public static void main(String[] args){ //顺序执行，根据编写的顺序，从上到下运行 System.out.println(1); System.out.println(2); System.out.println(3); } Console： 1 2 3  二 、分支结构
- 通过 if 、if-else 、if-else if-else 来控制程序的运行流程。 一)if分支结构语句的第一种格式：if 语法格式： if(关系表达式)｛ 语句体; ｝ *执行流程 ①首先判断关系表达式看其结果是ture还是false ②如果是ture就执行语句体 ③如果是false就不执行语句体 public static void main(String[] args){ System.out.println(&amp;quot;开始&amp;quot;); // 定义两个变量 int a = 10; int b = 20; //变量使用if判断 if (a == b){ System.out.println(&amp;quot;a等于b&amp;quot;); } int c = 10; if(a == c){ System.</description>
+ 顺序结构就是程序从上到下逐行地执行，中间没有(任何)判断和跳转如main方法的多行代码之间没有任何流程控制， 则程序总是从上向下依次执行，排在前面的代码先执行，排在后面的代码后执行。  public static void main(String[] args){ //顺序执行，根据编写的顺序，从上到下运行 System.out.println(1); System.out.println(2); System.out.println(3); }   Console： 1 2 3  二 、分支结构
+ 通过 if 、if-else 、if-else if-else 来控制程序的运行流程。 一)if分支结构语句的第一种格式：if 语法格式： if(关系表达式)｛ 语句体; ｝ *执行流程 ①首先判断关系表达式看其结果是ture还是false ②如果是ture就执行语句体 ③如果是false就不执行语句体  public static void main(String[] args){ System.out.println(&amp;quot;开始&amp;quot;); // 定义两个变量 int a = 10; int b = 20; //变量使用if判断 if (a == b){ System.</description>
     </item>
     
     <item>
       <title>基本数据类型和命名规范</title>
-      <link>https:///derbo.github.io/post/studyday01/</link>
+      <link>https:///derbo.gitub.io/post/studyday01/</link>
       <pubDate>Sun, 21 Jul 2019 18:31:47 +0800</pubDate>
       
-      <guid>https:///derbo.github.io/post/studyday01/</guid>
+      <guid>https:///derbo.gitub.io/post/studyday01/</guid>
       <description>对我以学知识的整理
 我的GitHub:https://github.com/DerBo 一 、数据类型：
 关键字：byte short int long float double char boolean 一）基本数据类型 1.整型 byte(一个字节) short(两个字节) int(四个字节) long (8个字节) 2.浮点型 float(四个字节) double(八个字节) 3.字符型 char(两个字节) 4.布尔型 boolean 二）引用数据类型 1.class关键字定义的类 2.interface关键字定义的接口 3.数组  二 、命名规则(必须遵守)
@@ -64,10 +181,10 @@ byte(字节型): 存储范围为:0 ~ 2^7-1 (0 ~ 127) short(短整型): 存储范
     
     <item>
       <title>我的第一篇博客</title>
-      <link>https:///derbo.github.io/post/blog/</link>
+      <link>https:///derbo.gitub.io/post/blog/</link>
       <pubDate>Sat, 20 Jul 2019 23:35:37 +0800</pubDate>
       
-      <guid>https:///derbo.github.io/post/blog/</guid>
+      <guid>https:///derbo.gitub.io/post/blog/</guid>
       <description>我的第一篇博客，用来记录我学习的开始！！！加油！！！
 我的GitHub:https://github.com/DerBo</description>
     </item>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>实例变量和局部变量区别 // My New Hugo Site</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://derbo.gitub.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="实例变量和局部变量区别"/>
+<meta name="twitter:description" content=" 对我以学知识的整理
+我的GitHub:https://github.com/DerBo  在类中的位置不同
+ 实例变量：类中，方法外
+例如：
+public class A{ private int a;//实例变量 public void f(){}; }   局部变量：方法中或者方法声明上(形式参数)  例如：
+public class A{ public void f(){ int a;//局部变量 }; }   作用范围不一样
+ 实例变量：类中直接用，其他类通过&rdquo;对象名.实例变量&rdquo;使用 局部变量：当前方法的作用域中  初始化值的不同
+ 实例变量：有默认值 局部变量：没有默认值。必须先定义，赋值，最后使用  在内存中的位置不同
+ 实例变量：堆内存 局部变量：栈内存  生命周期不同
+ 实例变量：随着对象的创建或者类的加载而存在，随着对象的消失而消失 换句话说，没有创建对象，就不会在堆中分配它的内存，创建一个，分配一个 局部变量：随着方法的调用而存在，随着方法的调用完毕而消失 换句话说，方法没有被调用，该局部变量不会在栈中分配内存，调用一次，分配一次   "/>
+
+    <meta property="og:title" content="实例变量和局部变量区别" />
+<meta property="og:description" content=" 对我以学知识的整理
+我的GitHub:https://github.com/DerBo  在类中的位置不同
+ 实例变量：类中，方法外
+例如：
+public class A{ private int a;//实例变量 public void f(){}; }   局部变量：方法中或者方法声明上(形式参数)  例如：
+public class A{ public void f(){ int a;//局部变量 }; }   作用范围不一样
+ 实例变量：类中直接用，其他类通过&rdquo;对象名.实例变量&rdquo;使用 局部变量：当前方法的作用域中  初始化值的不同
+ 实例变量：有默认值 局部变量：没有默认值。必须先定义，赋值，最后使用  在内存中的位置不同
+ 实例变量：堆内存 局部变量：栈内存  生命周期不同
+ 实例变量：随着对象的创建或者类的加载而存在，随着对象的消失而消失 换句话说，没有创建对象，就不会在堆中分配它的内存，创建一个，分配一个 局部变量：随着方法的调用而存在，随着方法的调用完毕而消失 换句话说，方法没有被调用，该局部变量不会在栈中分配内存，调用一次，分配一次   " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https:///derbo.gitub.io/post/studyday13/" />
+<meta property="article:published_time" content="2019-08-01T15:42:55&#43;08:00"/>
+<meta property="article:modified_time" content="2019-08-01T15:42:55&#43;08:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https:///derbo.gitub.io/"><img class="app-header-avatar" src="/derbo.gitub.io/avatar.jpg" alt="John Doe" /></a>
+      <h1>My New Hugo Site</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">实例变量和局部变量区别</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Aug 1, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>对我以学知识的整理</p>
+
+<h2 id="我的github-https-github-com-derbo">我的GitHub:<a href="https://github.com/DerBo">https://github.com/DerBo</a></h2>
+
+<ul>
+<li><p>在类中的位置不同</p>
+
+<ul>
+<li><p>实例变量：类中，方法外</p>
+
+<p>例如：</p>
+
+<pre><code class="language-java">    public class A{
+        private int a;//实例变量
+        public void f(){};
+    }
+</code></pre>
+
+<ul>
+<li>局部变量：方法中或者方法声明上(形式参数)</li>
+</ul>
+
+<p>例如：</p>
+
+<pre><code class="language-java">    public class A{             
+        public void f(){
+            int a;//局部变量
+        };
+    }
+</code></pre></li>
+</ul></li>
+
+<li><p>作用范围不一样</p>
+
+<ul>
+<li>实例变量：类中直接用，其他类通过&rdquo;对象名.实例变量&rdquo;使用</li>
+<li>局部变量：当前方法的作用域中</li>
+</ul></li>
+
+<li><p>初始化值的不同</p>
+
+<ul>
+<li>实例变量：有默认值</li>
+<li>局部变量：没有默认值。必须先定义，赋值，最后使用</li>
+</ul></li>
+
+<li><p>在内存中的位置不同</p>
+
+<ul>
+<li>实例变量：堆内存</li>
+<li>局部变量：栈内存</li>
+</ul></li>
+
+<li><p>生命周期不同</p>
+
+<ul>
+<li>实例变量：随着对象的创建或者类的加载而存在，随着对象的消失而消失</li>
+<li>换句话说，没有创建对象，就不会在堆中分配它的内存，创建一个，分配一个</li>
+<li>局部变量：随着方法的调用而存在，随着方法的调用完毕而消失</li>
+<li>换句话说，方法没有被调用，该局部变量不会在栈中分配内存，调用一次，分配一次</li>
+</ul></li>
+</ul>
+
+<hr />
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>数组排序算法   (三)插入排序 // My New Hugo Site</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://derbo.gitub.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数组排序算法   (三)插入排序"/>
+<meta name="twitter:description" content="对我以学知识的整理
+我的GitHub:https://github.com/DerBo 数据结构与算法分析：最简单的排序算法之一，插入排序由N-1趟排序组成。对于p=1到N-1趟，插入排序保证从位置0到位置p上的元素为已排序状态。插入排序利用了这样的原理：位置0到位置p-1上的元素已经处于排过序的状态。 一 、代码
+// 插入排序 public void ChaRu(int[] arr) { int j = 0; for (int i = 1; i &lt; arr.length; i&#43;&#43;) { //保存当前位置元素的内容 int p = arr[i]; //每一次都把前一个大于此元素的元素排在后面已经排好的队列当中 for (j = i; j &gt; 0 &amp;&amp; arr[i] &lt; arr[j - 1]; j--) { arr[j] = arr[j - 1]; arr[j - 1] = p; } } }  原始数组 34 8 64 51 32 21 移动的位置 p=1趟后 8 34 64 51 32 21 1 p=2趟后 8 34 64 51 32 21 0 p=3趟后 8 34 51 64 32 21 1 p=4趟后 8 32 34 51 64 21 3 p=5趟后 8 21 32 34 51 61 4  二 、 复杂度"/>
+
+    <meta property="og:title" content="数组排序算法   (三)插入排序" />
+<meta property="og:description" content="对我以学知识的整理
+我的GitHub:https://github.com/DerBo 数据结构与算法分析：最简单的排序算法之一，插入排序由N-1趟排序组成。对于p=1到N-1趟，插入排序保证从位置0到位置p上的元素为已排序状态。插入排序利用了这样的原理：位置0到位置p-1上的元素已经处于排过序的状态。 一 、代码
+// 插入排序 public void ChaRu(int[] arr) { int j = 0; for (int i = 1; i &lt; arr.length; i&#43;&#43;) { //保存当前位置元素的内容 int p = arr[i]; //每一次都把前一个大于此元素的元素排在后面已经排好的队列当中 for (j = i; j &gt; 0 &amp;&amp; arr[i] &lt; arr[j - 1]; j--) { arr[j] = arr[j - 1]; arr[j - 1] = p; } } }  原始数组 34 8 64 51 32 21 移动的位置 p=1趟后 8 34 64 51 32 21 1 p=2趟后 8 34 64 51 32 21 0 p=3趟后 8 34 51 64 32 21 1 p=4趟后 8 32 34 51 64 21 3 p=5趟后 8 21 32 34 51 61 4  二 、 复杂度" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https:///derbo.gitub.io/post/studyday10/" />
+<meta property="article:published_time" content="2019-07-27T13:33:25&#43;08:00"/>
+<meta property="article:modified_time" content="2019-07-27T13:33:25&#43;08:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https:///derbo.gitub.io/"><img class="app-header-avatar" src="/derbo.gitub.io/avatar.jpg" alt="John Doe" /></a>
+      <h1>My New Hugo Site</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">数组排序算法   (三)插入排序</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 27, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>对我以学知识的整理</p>
+
+<h2 id="我的github-https-github-com-derbo">我的GitHub:<a href="https://github.com/DerBo">https://github.com/DerBo</a></h2>
+
+<h2 id="数据结构与算法分析-最简单的排序算法之一-插入排序由n-1趟排序组成-对于p-1到n-1趟-插入排序保证从位置0到位置p上的元素为已排序状态-插入排序利用了这样的原理-位置0到位置p-1上的元素已经处于排过序的状态">数据结构与算法分析：最简单的排序算法之一，插入排序由N-1趟排序组成。对于p=1到N-1趟，插入排序保证从位置0到位置p上的元素为已排序状态。插入排序利用了这样的原理：位置0到位置p-1上的元素已经处于排过序的状态。</h2>
+
+<p>一 、代码</p>
+
+<pre><code class="language-java">    // 插入排序
+	    public void ChaRu(int[] arr) {
+		    int j = 0;
+		    for (int i = 1; i &lt; arr.length; i++) {
+                //保存当前位置元素的内容
+			    int p = arr[i];
+                //每一次都把前一个大于此元素的元素排在后面已经排好的队列当中
+			    for (j = i; j &gt; 0 &amp;&amp; arr[i] &lt; arr[j - 1]; j--) {
+				   arr[j] = arr[j - 1];
+				   arr[j - 1] = p;
+			    }
+		    }
+	    }
+</code></pre>
+
+<pre><code>原始数组   34    8    64    51    32    21    移动的位置
+
+p=1趟后    8    34    64    51    32    21       1
+p=2趟后    8    34    64    51    32    21       0
+p=3趟后    8    34    51    64    32    21       1
+p=4趟后    8    32    34    51    64    21       3
+p=5趟后    8    21    32    34    51    61       4
+</code></pre>
+
+<p>二 、 复杂度</p>
+
+<ul>
+<li>由于嵌套循环的每一个都花费N此迭代，因此插入排序的复杂度为O(N^2),而如果对一个已经预先排序的数列，它的运行时间就变为O(N)。 如果输入的数列几乎被排序，那么插入排序将执行的很快，不过插入排序和其他排序算法一样，对于平均的情形也是O(N^2)</li>
+</ul>
+
+<hr />
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

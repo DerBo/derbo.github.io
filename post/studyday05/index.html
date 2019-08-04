@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>数组（一） // My New Hugo Site</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://derbo.gitub.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数组（一）"/>
+<meta name="twitter:description" content="对我以学知识的整理
+我的GitHub:https://github.com/DerBo  数组(Array),就是相同数据类型的元素按一定顺序排列的集合,就是把有限个类型相同的变量用一个名字命名, 以便统一管理它们,然后用编号区分他们,这个名字称为数组名,编号称为下标或索引(index),组成数组的各个 变量称为数组的元素(element),数组中元素的个数称为数组的长度(length)。  一 、一维数组的定义方式
+ 1.静态初始化
+ 格式一 ：数据类型[] 数组名={元素1，元素2，元素3&hellip;}; //只能 在一个语句中完成，不能分开两个语句写
+ 比如：定义一个由几个整型组成的数组 int[] arr = {1,2,3,4,5};//正确 int[] arr; arr = {1,2,3,4,5};//错误  格式二 ：数据类型[] 数组名 = new 数据类型 []{元素1，元素2，元素3&hellip;};
+ 比如：定义一个由几个整型组成的数组 int[] arr = new int[]{1,2,3,4,5};//正确 int[] arr; arr = new int[]{1,2,3,4,5};//正确   2.动态初始化
+ 格式三 ：数组存储的元素的数据类型[] 数组名字 = new 数组存储元素的数据类型[长度]； 或 数组存储的数据类型[]数组名字；
+ 数组名字 = new 数组存储的数据类型[长度]；  注意：
+ 数组的长度一旦指定后就不能更改，在容器和Arrays工具类中的动态数组，copy工具都是在内部新增 了一个更大的数组，然后将原数组的引用指向新数组。 数据局部变量的动态初始化是指new新数组并指定长度的时候，数组的元素会初始化为0，而不是nullSystem."/>
+
+    <meta property="og:title" content="数组（一）" />
+<meta property="og:description" content="对我以学知识的整理
+我的GitHub:https://github.com/DerBo  数组(Array),就是相同数据类型的元素按一定顺序排列的集合,就是把有限个类型相同的变量用一个名字命名, 以便统一管理它们,然后用编号区分他们,这个名字称为数组名,编号称为下标或索引(index),组成数组的各个 变量称为数组的元素(element),数组中元素的个数称为数组的长度(length)。  一 、一维数组的定义方式
+ 1.静态初始化
+ 格式一 ：数据类型[] 数组名={元素1，元素2，元素3&hellip;}; //只能 在一个语句中完成，不能分开两个语句写
+ 比如：定义一个由几个整型组成的数组 int[] arr = {1,2,3,4,5};//正确 int[] arr; arr = {1,2,3,4,5};//错误  格式二 ：数据类型[] 数组名 = new 数据类型 []{元素1，元素2，元素3&hellip;};
+ 比如：定义一个由几个整型组成的数组 int[] arr = new int[]{1,2,3,4,5};//正确 int[] arr; arr = new int[]{1,2,3,4,5};//正确   2.动态初始化
+ 格式三 ：数组存储的元素的数据类型[] 数组名字 = new 数组存储元素的数据类型[长度]； 或 数组存储的数据类型[]数组名字；
+ 数组名字 = new 数组存储的数据类型[长度]；  注意：
+ 数组的长度一旦指定后就不能更改，在容器和Arrays工具类中的动态数组，copy工具都是在内部新增 了一个更大的数组，然后将原数组的引用指向新数组。 数据局部变量的动态初始化是指new新数组并指定长度的时候，数组的元素会初始化为0，而不是nullSystem." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https:///derbo.gitub.io/post/studyday05/" />
+<meta property="article:published_time" content="2019-07-22T13:12:12&#43;08:00"/>
+<meta property="article:modified_time" content="2019-07-22T13:12:12&#43;08:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https:///derbo.gitub.io/"><img class="app-header-avatar" src="/derbo.gitub.io/avatar.jpg" alt="John Doe" /></a>
+      <h1>My New Hugo Site</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">数组（一）</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 22, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>对我以学知识的整理</p>
+
+<h2 id="我的github-https-github-com-derbo">我的GitHub:<a href="https://github.com/DerBo">https://github.com/DerBo</a></h2>
+
+<pre><code> 数组(Array),就是相同数据类型的元素按一定顺序排列的集合,就是把有限个类型相同的变量用一个名字命名,
+ 以便统一管理它们,然后用编号区分他们,这个名字称为数组名,编号称为下标或索引(index),组成数组的各个
+ 变量称为数组的元素(element),数组中元素的个数称为数组的长度(length)。
+</code></pre>
+
+<p>一 、一维数组的定义方式</p>
+
+<ul>
+<li><p>1.静态初始化</p>
+
+<ul>
+<li><p>格式一 ：数据类型[] 数组名={元素1，元素2，元素3&hellip;}; //只能 在一个语句中完成，不能分开两个语句写</p>
+
+<pre><code>         比如：定义一个由几个整型组成的数组
+
+         int[] arr = {1,2,3,4,5};//正确
+
+         int[] arr;
+         arr = {1,2,3,4,5};//错误    
+</code></pre></li>
+
+<li><p>格式二 ：数据类型[] 数组名 = new 数据类型 []{元素1，元素2，元素3&hellip;};</p>
+
+<pre><code>         比如：定义一个由几个整型组成的数组
+
+         int[] arr = new int[]{1,2,3,4,5};//正确  
+
+         int[] arr;
+         arr = new int[]{1,2,3,4,5};//正确 
+</code></pre></li>
+</ul></li>
+
+<li><p>2.动态初始化</p>
+
+<ul>
+<li><p>格式三 ：数组存储的元素的数据类型[] 数组名字 = new 数组存储元素的数据类型[长度]；
+        或  数组存储的数据类型[]数组名字；</p>
+
+<pre><code>         数组名字 = new 数组存储的数据类型[长度]；          
+</code></pre>
+
+<p><strong>注意</strong>：</p>
+
+<ol>
+<li>数组的长度一旦指定后就不能更改，在容器和Arrays工具类中的动态数组，copy工具都是在内部新增
+了一个更大的数组，然后将原数组的引用指向新数组。</li>
+<li>数据局部变量的动态初始化是指new新数组并指定长度的时候，数组的元素会初始化为0，而不是nullSystem.out.println()输出的时候可以输出内容。而其他局部变量则必须初始化不然输出的时候会报错。</li>
+</ol></li>
+</ul></li>
+
+<li><p>3.数组的默认值</p>
+
+<pre><code>   不同的数组初始化的时候都会有它的默认值：
+
+        数组元素类型       元素默认初始值
+
+         byte                   0
+
+         short                  0
+
+         int                    0
+
+         long                   0L
+
+         float                  0.0F
+
+         double                 0.0
+
+         char                   0或为：'\u0000'
+
+         boolean                false
+
+         引用类型                null
+</code></pre></li>
+</ul>
+
+<p>二 、 数组在内存中的存储方式</p>
+
+<pre><code>       例如：
+</code></pre>
+
+<pre><code class="language-java">​            public static void main(String[] args) {
+
+  	                int[] arr = new int[3];
+                 	System.out.println(arr);
+                } 
+</code></pre>
+
+<pre><code>        ①arr是存放在方法栈中，记录的是数组的引用地址。
+
+        ②new int[3]; 是在堆中创建的有三个连续空间的内存地址，它的首地址指向在栈中的arr。
+</code></pre>
+
+<p>三 、 数组使用过程中发生的异常</p>
+
+<ul>
+<li><p>一）数组越界异常（运行时异常）</p>
+
+<pre><code>    例如：
+
+        public static void main(String[] args) {
+                int[] arr = {1,2,3};
+                System.out.println(arr[3]);//超出下标范围
+        } 
+</code></pre>
+
+<ul>
+<li><strong>此时数组的下标分别为距离首地址 0，1，2 长度的内存空间，当操作要执行arr[3],即下标为3的元素进行访问时，此时的访问下标已经超出了数组可以访问的下标就会抛出ArrayIndexOutOfBoundsException 异常，Java中的数组和c语言中的数组不同的地方在于，c语言中没有对用户输入的下标进行校验，所以如果程序员不谨慎的进行访问的情况下，编译器是不会警告这个问题的，所以有时会访问到非法的内存区域，而这在Java中不同，Java对每一个输入的下标都额外的进行了校验，虽然会牺牲一些维护消耗和内存，但显然这是值得的。</strong></li>
+</ul></li>
+
+<li><p>二）数组空指针异常（运行时异常）</p>
+
+<pre><code>    例如：              
+        public static void main(String[] args) {
+                int[] arr = {1,2,3};
+                arr = null;
+                System.out.println(arr[0]);
+        ｝ 
+</code></pre>
+
+<ul>
+<li><strong>arr数组本来初始化为长度为3的数组，又赋值为1，2，3 而arr=null，则意味着变量arr将不会再保存数组的内存地址，也就不允许再操作数组了因此运行的时候就会抛出：NullPointerException 空指针异常。</strong>
+
+<br /></li>
+</ul></li>
+</ul>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
